@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>Status</title>
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="fav.png" type="image/icon"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+<!--
+textarea,input,select {
+	background-color: #FDFBFB;
+	border: 1px #BBBBBB solid;
+	padding: 2px;
+	margin: 1px;
+	font-size: 14px;
+	color: #808080;
+}
+
+.tabula {
+	border-collapse: none; 
+	border-spacing: none;
+	background-color: white;
+	width: 300px;
+	color: black;
+	border: 4px solid #2c3e50;
+	padding:  40px 10px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.Blogout {
+	text-decoration: none;
+	text-align: center;
+	border: 2px solid #2980b9;
+	color: #2980b9;
+	background-color: white;
+	padding: 10px 60px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	font-weight: bold;
+	cursor: pointer;
+}
+.Blogout:hover {
+	color: white;
+	background: #2980b9;
+}
+body{ color: white;
+	font-size: 12px;
+	font-family: roboto, sans-serif;
+	background: #34495e;
+}
+
+a, a:link, a:visited, a:active {
+	color: #AAAAAA;
+	text-decoration: none;
+	font-size: 12px;
+}
+a:hover {
+	border-bottom: 1px dotted #c1c1c1;
+	color: #AAAAAA;
+}
+img {
+	border: none;
+}
+td { 
+	font-size: 12px;
+	padding: 4px;
+}
+
+-->
+@media only screen and (max-width: 800px) {
+	.tabula {
+		width:70%;
+	}
+
+}
+@media only screen and (max-width: 600px) {
+	.tabula {
+		width:80%;
+	}
+
+}
+</style>
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+</head>
+<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+$(if advert-pending == 'yes')
+	onLoad="openAdvert()"
+$(endif)
+>
+<table width="100%" height="100%">
+
+<tr>
+<td align="center" valign="middle">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+<table class="tabula">
+$(if login-by != 'mac')
+	<br><div style="text-align: center;"><h2>Selamat Datang $(username)!</h2></div><br>
+$(endif)
+	<tr><td align="right"><i class="fa fa-download"></i> $(bytes-out-nice) </td><td><i class="fa fa-upload"></i> $(bytes-in-nice)</td></tr>
+$(if session-time-left)
+	<tr><td class="bold" align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
+$(else)
+	<tr><td class="bold" align="right">connected:</td><td>$(uptime)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td class="bold" align="right">status:</td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+$(endif)
+
+</table>
+$(if login-by-mac != 'yes')
+<br>
+<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+<!-- end of user manager link -->
+<input class="Blogout" type="submit" value="log off">
+$(endif)
+</form>
+
+</td>
+</table>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Login to MyWIFI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="icon" href="fav.png" type="image/icon"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+body {position: relative; background: #34495e; font-size: 12px; font-family: roboto, sans-serif;}
+
+textarea,input,select {
+background-color: #FDFBFB;
+border: 1px solid #BBBBBB;
+padding: 2px;
+font-size: 14px;
+color: #808080;
+}
+
+::placeholder {color: #aaa;}
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 14px; color: #7A7A7A; }
+
+h1 {
+	pointer-events: none;
+}
+.input-container {
+	display: -ms-flexbox;
+	display: flex;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+.icon {
+	color: #95a5a6;
+	background-color: #ecf0f1;
+	padding: 11px;
+	min-width: 25px;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border:1px solid #95a5a6;
+	border-right:0px;
+}
+
+.input-field {
+	width: 100%;
+	padding: 8px;
+	outline: none;
+	border: 1px solid #95a5a6;
+	margin-right: 0px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+.input-field:focus {
+	border: 1px solid dodgerblue;
+	box-shadow: 0 0 2px 0 dodgerblue;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.headerL {
+	background: #e74c3c;
+	color: #fff;
+	padding: 0 4px;
+}
+
+.login {
+	background-color: #white;
+	border: 2px solid #2980b9;
+	color: #2980b9;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	margin: 4px 2px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.login:hover {
+	background-color: #2980b9;
+	color: white;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+:focus:-ms-input-placeholder {  
+  opacity: 0;
+  -ms-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.column {
+	float: left;
+	height: auto;
+	padding-bottom: 100px;
+}
+
+.left {
+	width: 35%;
+}
+
+.right {
+	width: 65%;
+}
+
+.columns {
+  float: left;
+  width: 30%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 4px solid #2c3e50;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.price:hover {
+  box-shadow: 2px 8px 12px 0 rgba(0,0,0,0.2);
+}
+
+.price .header {
+  background-color: #3498db;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+	.columns{
+		width:97%;
+	}
+	.column{
+		width:100%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 95%;
+  }
+  .column {
+  	width: 100%;
+  }
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 60px;
+   background-color: #2c3e50;
+   color: white;
+   text-align: center;
+}
+
+</style>
+
+</head>
+
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<div align="center">
+<img src="Logo.png" width="200px">
+</div>
+
+<div class="row">
+	<div class="column left">
+	<div align="center" style="margin-top:7%;">
+	<table width="100%">
+	<tr>
+	<td align="center">
+		<table bgcolor= "white" width="280" height="320" style=" border: 4px solid #2c3e50; padding: 0px;" cellpadding="0" cellspacing="0">
+			<tr>
+				<td  align="center" valign="top" colspan="2">
+					<form name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />	
+
+						<div><h1><span class="headerL">L</span>ogin</h1></div>
+
+						<div class="input-container">
+						<i class="fa fa-user icon"></i>
+						<input class="input-field" name="username" type="text" placeholder="Username"/></div>
+						
+						<div class="input-container">
+						<i class="fa fa-key icon"></i>
+						<input class="input-field" name="password" type="password" placeholder="Password"/></div>
+						
+						<div class="input-container"><input class="login" type="submit" value="Login" /></div>
+					</form>
+				</td>
+			</tr>
+		</table>
+	$(if error)<br /><div style="color: #FF8080; font-size: 12px">$(error)</div>$(endif)
+	</td>
+	</tr>
+</table>
+	</div>
+	</div>
+	<div class="column right">
+	<div style="margin-top:3%;">
+	<div class="columns">
+  <ul class="price">
+    <li class="header">1 Hari</li>
+    <li class="grey">5k</li>
+    <li>12 Jam</li>
+    <li>Internet</li>
+    <li>Up to 2 Mb</li>
+    <li style="color: #e74c3c;">Belum Tersedia</li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#e74c3c">1 Bulan</li>
+    <li class="grey">75K</li>
+    <li>168 Jam</li>
+    <li>Internet</li>
+    <li>Up to 2 Mb</li>
+    <li style="color: #e74c3c;">Belum Tersedia</li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">1 Minggu</li>
+    <li class="grey">20K</li>
+    <li>720 Jam</li>
+    <li>Internet</li>
+    <li>Up to 2 Mb</li>
+    <li style="color: #e74c3c;">Belum Tersedia</li>
+  </ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+<div class="footer">
+<p style="padding-top: 10px;">Copyright 2019 for MyWIFI and Designed by DaaNii</p>
+</div>
+</body>
+</html>
